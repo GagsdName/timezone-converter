@@ -1,6 +1,7 @@
-from flask import Flask, jsonify
+from datetime import datetime
+from flask import Flask, request, jsonify
 from flask_cors import CORS
-
+import pytz
 
 # configuration
 DEBUG = True
@@ -17,8 +18,18 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 
 # sanity check route
 @app.route('/ping', methods=['GET'])
-def ping_pong():
-    return jsonify('pong!')
+def ping_pong():    
+    utcmoment_naive = datetime.utcnow()
+    utcmoment = utcmoment_naive.replace(tzinfo=pytz.utc)
+    localFormat = "%Y-%m-%d %H:%M:%S"
+
+    selected = request.args.get('selectedZone')
+    localDatetime = utcmoment.astimezone(pytz.timezone(selected))
+
+    return jsonify({
+        'timezone': localDatetime.strftime(localFormat)
+        # 'timezone': request.args.get('selectedZone')
+    })
 
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p>{{ msg }}</p>
-    <select>
+    <p>{{ this.msg }}</p>
+    <select @change="onSelect($event.target.value)">
       <option timeZoneId="1" gmtAdjustment="GMT-12:00" useDaylightTime="0" value="-12">
         (GMT-12:00) International Date Line West
       </option>
@@ -44,7 +44,7 @@
       <option timeZoneId="14" gmtAdjustment="GMT-05:00" useDaylightTime="0" value="-5">
         (GMT-05:00) Bogota, Lima, Quito, Rio Branco
       </option>
-      <option timeZoneId="15" gmtAdjustment="GMT-05:00" useDaylightTime="1" value="-5">
+      <option timeZoneId="15" gmtAdjustment="GMT-05:00" useDaylightTime="1" value="US/East-Indiana"> <!-- test-value -->
         (GMT-05:00) Eastern Time (US & Canada)
       </option>
       <option timeZoneId="16" gmtAdjustment="GMT-05:00" useDaylightTime="1" value="-5">
@@ -249,21 +249,33 @@
         (GMT+13:00) Nuku'alofa
       </option>
     </select>
-  </div> </template
->;
+  </div>
+  </template>;
 
 <script lang="ts">
 import axios from 'axios';
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Ping extends Vue {
-  @Prop({ required: false, type: String, default: 'Select a Timezone' }) private msg: string;
+  msg = 'Select a timezone';
 
-  private getMessage() {
-    const path = 'http://localhost:5000/ping';
+  selected = '';
+
+  path = 'http://localhost:5000/ping';
+
+  onSelect(value: string) {
+    console.log(value);
+    this.selected = value;
+
+    this.getTime();
+  }
+
+  getTime() {
     axios
-      .get(path)
+      .get(this.path, {
+        params: { selectedZone: this.selected },
+      })
       .then((res) => {
         this.msg = res.data;
       })
@@ -271,10 +283,6 @@ export default class Ping extends Vue {
         // eslint-disable-next-line
         console.error(error);
       });
-  }
-
-  public created() {
-    this.getMessage();
   }
 }
 </script>
