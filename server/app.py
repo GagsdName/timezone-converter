@@ -21,7 +21,7 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 def ping_pong():    
     utcmoment_naive = datetime.utcnow()
     utcmoment = utcmoment_naive.replace(tzinfo=pytz.utc)
-    localFormat = "%Y-%m-%d %H:%M:%S"
+    localFormat = "%H:%M:%S"
 
     selected = request.args.get('selectedZone')
     localDatetime = utcmoment.astimezone(pytz.timezone(selected))

@@ -1,256 +1,11 @@
 <template>
   <div>
-    <p>{{ this.msg }}</p>
     <select @change="onSelect($event.target.value)">
-      <option timeZoneId="1" gmtAdjustment="GMT-12:00" useDaylightTime="0" value="-12">
-        (GMT-12:00) International Date Line West
-      </option>
-      <option timeZoneId="2" gmtAdjustment="GMT-11:00" useDaylightTime="0" value="-11">
-        (GMT-11:00) Midway Island, Samoa
-      </option>
-      <option timeZoneId="3" gmtAdjustment="GMT-10:00" useDaylightTime="0" value="-10">
-        (GMT-10:00) Hawaii
-      </option>
-      <option timeZoneId="4" gmtAdjustment="GMT-09:00" useDaylightTime="1" value="-9">
-        (GMT-09:00) Alaska
-      </option>
-      <option timeZoneId="5" gmtAdjustment="GMT-08:00" useDaylightTime="1" value="-8">
-        (GMT-08:00) Pacific Time (US & Canada)
-      </option>
-      <option timeZoneId="6" gmtAdjustment="GMT-08:00" useDaylightTime="1" value="-8">
-        (GMT-08:00) Tijuana, Baja California
-      </option>
-      <option timeZoneId="7" gmtAdjustment="GMT-07:00" useDaylightTime="0" value="-7">
-        (GMT-07:00) Arizona
-      </option>
-      <option timeZoneId="8" gmtAdjustment="GMT-07:00" useDaylightTime="1" value="-7">
-        (GMT-07:00) Chihuahua, La Paz, Mazatlan
-      </option>
-      <option timeZoneId="9" gmtAdjustment="GMT-07:00" useDaylightTime="1" value="-7">
-        (GMT-07:00) Mountain Time (US & Canada)
-      </option>
-      <option timeZoneId="10" gmtAdjustment="GMT-06:00" useDaylightTime="0" value="-6">
-        (GMT-06:00) Central America
-      </option>
-      <option timeZoneId="11" gmtAdjustment="GMT-06:00" useDaylightTime="1" value="-6">
-        (GMT-06:00) Central Time (US & Canada)
-      </option>
-      <option timeZoneId="12" gmtAdjustment="GMT-06:00" useDaylightTime="1" value="-6">
-        (GMT-06:00) Guadalajara, Mexico City, Monterrey
-      </option>
-      <option timeZoneId="13" gmtAdjustment="GMT-06:00" useDaylightTime="0" value="-6">
-        (GMT-06:00) Saskatchewan
-      </option>
-      <option timeZoneId="14" gmtAdjustment="GMT-05:00" useDaylightTime="0" value="-5">
-        (GMT-05:00) Bogota, Lima, Quito, Rio Branco
-      </option>
-      <option timeZoneId="15" gmtAdjustment="GMT-05:00" useDaylightTime="1" value="US/East-Indiana"> <!-- test-value -->
-        (GMT-05:00) Eastern Time (US & Canada)
-      </option>
-      <option timeZoneId="16" gmtAdjustment="GMT-05:00" useDaylightTime="1" value="-5">
-        (GMT-05:00) Indiana (East)
-      </option>
-      <option timeZoneId="17" gmtAdjustment="GMT-04:00" useDaylightTime="1" value="-4">
-        (GMT-04:00) Atlantic Time (Canada)
-      </option>
-      <option timeZoneId="18" gmtAdjustment="GMT-04:00" useDaylightTime="0" value="-4">
-        (GMT-04:00) Caracas, La Paz
-      </option>
-      <option timeZoneId="19" gmtAdjustment="GMT-04:00" useDaylightTime="0" value="-4">
-        (GMT-04:00) Manaus
-      </option>
-      <option timeZoneId="20" gmtAdjustment="GMT-04:00" useDaylightTime="1" value="-4">
-        (GMT-04:00) Santiago
-      </option>
-      <option timeZoneId="21" gmtAdjustment="GMT-03:30" useDaylightTime="1" value="-3.5">
-        (GMT-03:30) Newfoundland
-      </option>
-      <option timeZoneId="22" gmtAdjustment="GMT-03:00" useDaylightTime="1" value="-3">
-        (GMT-03:00) Brasilia
-      </option>
-      <option timeZoneId="23" gmtAdjustment="GMT-03:00" useDaylightTime="0" value="-3">
-        (GMT-03:00) Buenos Aires, Georgetown
-      </option>
-      <option timeZoneId="24" gmtAdjustment="GMT-03:00" useDaylightTime="1" value="-3">
-        (GMT-03:00) Greenland
-      </option>
-      <option timeZoneId="25" gmtAdjustment="GMT-03:00" useDaylightTime="1" value="-3">
-        (GMT-03:00) Montevideo
-      </option>
-      <option timeZoneId="26" gmtAdjustment="GMT-02:00" useDaylightTime="1" value="-2">
-        (GMT-02:00) Mid-Atlantic
-      </option>
-      <option timeZoneId="27" gmtAdjustment="GMT-01:00" useDaylightTime="0" value="-1">
-        (GMT-01:00) Cape Verde Is.
-      </option>
-      <option timeZoneId="28" gmtAdjustment="GMT-01:00" useDaylightTime="1" value="-1">
-        (GMT-01:00) Azores
-      </option>
-      <option timeZoneId="29" gmtAdjustment="GMT+00:00" useDaylightTime="0" value="0">
-        (GMT+00:00) Casablanca, Monrovia, Reykjavik
-      </option>
-      <option timeZoneId="30" gmtAdjustment="GMT+00:00" useDaylightTime="1" value="0">
-        (GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London
-      </option>
-      <option timeZoneId="31" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">
-        (GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
-      </option>
-      <option timeZoneId="32" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">
-        (GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague
-      </option>
-      <option timeZoneId="33" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">
-        (GMT+01:00) Brussels, Copenhagen, Madrid, Paris
-      </option>
-      <option timeZoneId="34" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">
-        (GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb
-      </option>
-      <option timeZoneId="35" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">
-        (GMT+01:00) West Central Africa
-      </option>
-      <option timeZoneId="36" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">
-        (GMT+02:00) Amman
-      </option>
-      <option timeZoneId="37" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">
-        (GMT+02:00) Athens, Bucharest, Istanbul
-      </option>
-      <option timeZoneId="38" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">
-        (GMT+02:00) Beirut
-      </option>
-      <option timeZoneId="39" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">
-        (GMT+02:00) Cairo
-      </option>
-      <option timeZoneId="40" gmtAdjustment="GMT+02:00" useDaylightTime="0" value="2">
-        (GMT+02:00) Harare, Pretoria
-      </option>
-      <option timeZoneId="41" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">
-        (GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius
-      </option>
-      <option timeZoneId="42" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">
-        (GMT+02:00) Jerusalem
-      </option>
-      <option timeZoneId="43" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">
-        (GMT+02:00) Minsk
-      </option>
-      <option timeZoneId="44" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">
-        (GMT+02:00) Windhoek
-      </option>
-      <option timeZoneId="45" gmtAdjustment="GMT+03:00" useDaylightTime="0" value="3">
-        (GMT+03:00) Kuwait, Riyadh, Baghdad
-      </option>
-      <option timeZoneId="46" gmtAdjustment="GMT+03:00" useDaylightTime="1" value="3">
-        (GMT+03:00) Moscow, St. Petersburg, Volgograd
-      </option>
-      <option timeZoneId="47" gmtAdjustment="GMT+03:00" useDaylightTime="0" value="3">
-        (GMT+03:00) Nairobi
-      </option>
-      <option timeZoneId="48" gmtAdjustment="GMT+03:00" useDaylightTime="0" value="3">
-        (GMT+03:00) Tbilisi
-      </option>
-      <option timeZoneId="49" gmtAdjustment="GMT+03:30" useDaylightTime="1" value="3.5">
-        (GMT+03:30) Tehran
-      </option>
-      <option timeZoneId="50" gmtAdjustment="GMT+04:00" useDaylightTime="0" value="4">
-        (GMT+04:00) Abu Dhabi, Muscat
-      </option>
-      <option timeZoneId="51" gmtAdjustment="GMT+04:00" useDaylightTime="1" value="4">
-        (GMT+04:00) Baku
-      </option>
-      <option timeZoneId="52" gmtAdjustment="GMT+04:00" useDaylightTime="1" value="4">
-        (GMT+04:00) Yerevan
-      </option>
-      <option timeZoneId="53" gmtAdjustment="GMT+04:30" useDaylightTime="0" value="4.5">
-        (GMT+04:30) Kabul
-      </option>
-      <option timeZoneId="54" gmtAdjustment="GMT+05:00" useDaylightTime="1" value="5">
-        (GMT+05:00) Yekaterinburg
-      </option>
-      <option timeZoneId="55" gmtAdjustment="GMT+05:00" useDaylightTime="0" value="5">
-        (GMT+05:00) Islamabad, Karachi, Tashkent
-      </option>
-      <option timeZoneId="56" gmtAdjustment="GMT+05:30" useDaylightTime="0" value="5.5">
-        (GMT+05:30) Sri Jayawardenapura
-      </option>
-      <option timeZoneId="57" gmtAdjustment="GMT+05:30" useDaylightTime="0" value="5.5">
-        (GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi
-      </option>
-      <option timeZoneId="58" gmtAdjustment="GMT+05:45" useDaylightTime="0" value="5.75">
-        (GMT+05:45) Kathmandu
-      </option>
-      <option timeZoneId="59" gmtAdjustment="GMT+06:00" useDaylightTime="1" value="6">
-        (GMT+06:00) Almaty, Novosibirsk
-      </option>
-      <option timeZoneId="60" gmtAdjustment="GMT+06:00" useDaylightTime="0" value="6">
-        (GMT+06:00) Astana, Dhaka
-      </option>
-      <option timeZoneId="61" gmtAdjustment="GMT+06:30" useDaylightTime="0" value="6.5">
-        (GMT+06:30) Yangon (Rangoon)
-      </option>
-      <option timeZoneId="62" gmtAdjustment="GMT+07:00" useDaylightTime="0" value="7">
-        (GMT+07:00) Bangkok, Hanoi, Jakarta
-      </option>
-      <option timeZoneId="63" gmtAdjustment="GMT+07:00" useDaylightTime="1" value="7">
-        (GMT+07:00) Krasnoyarsk
-      </option>
-      <option timeZoneId="64" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">
-        (GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi
-      </option>
-      <option timeZoneId="65" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">
-        (GMT+08:00) Kuala Lumpur, Singapore
-      </option>
-      <option timeZoneId="66" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">
-        (GMT+08:00) Irkutsk, Ulaan Bataar
-      </option>
-      <option timeZoneId="67" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">
-        (GMT+08:00) Perth
-      </option>
-      <option timeZoneId="68" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">
-        (GMT+08:00) Taipei
-      </option>
-      <option timeZoneId="69" gmtAdjustment="GMT+09:00" useDaylightTime="0" value="9">
-        (GMT+09:00) Osaka, Sapporo, Tokyo
-      </option>
-      <option timeZoneId="70" gmtAdjustment="GMT+09:00" useDaylightTime="0" value="9">
-        (GMT+09:00) Seoul
-      </option>
-      <option timeZoneId="71" gmtAdjustment="GMT+09:00" useDaylightTime="1" value="9">
-        (GMT+09:00) Yakutsk
-      </option>
-      <option timeZoneId="72" gmtAdjustment="GMT+09:30" useDaylightTime="0" value="9.5">
-        (GMT+09:30) Adelaide
-      </option>
-      <option timeZoneId="73" gmtAdjustment="GMT+09:30" useDaylightTime="0" value="9.5">
-        (GMT+09:30) Darwin
-      </option>
-      <option timeZoneId="74" gmtAdjustment="GMT+10:00" useDaylightTime="0" value="10">
-        (GMT+10:00) Brisbane
-      </option>
-      <option timeZoneId="75" gmtAdjustment="GMT+10:00" useDaylightTime="1" value="10">
-        (GMT+10:00) Canberra, Melbourne, Sydney
-      </option>
-      <option timeZoneId="76" gmtAdjustment="GMT+10:00" useDaylightTime="1" value="10">
-        (GMT+10:00) Hobart
-      </option>
-      <option timeZoneId="77" gmtAdjustment="GMT+10:00" useDaylightTime="0" value="10">
-        (GMT+10:00) Guam, Port Moresby
-      </option>
-      <option timeZoneId="78" gmtAdjustment="GMT+10:00" useDaylightTime="1" value="10">
-        (GMT+10:00) Vladivostok
-      </option>
-      <option timeZoneId="79" gmtAdjustment="GMT+11:00" useDaylightTime="1" value="11">
-        (GMT+11:00) Magadan, Solomon Is., New Caledonia
-      </option>
-      <option timeZoneId="80" gmtAdjustment="GMT+12:00" useDaylightTime="1" value="12">
-        (GMT+12:00) Auckland, Wellington
-      </option>
-      <option timeZoneId="81" gmtAdjustment="GMT+12:00" useDaylightTime="0" value="12">
-        (GMT+12:00) Fiji, Kamchatka, Marshall Is.
-      </option>
-      <option timeZoneId="82" gmtAdjustment="GMT+13:00" useDaylightTime="0" value="13">
-        (GMT+13:00) Nuku'alofa
-      </option>
+      <option v-for="value in options" v-bind:key="value">{{ value }}</option>
     </select>
+      <p>{{ this.msg }}</p>
   </div>
-  </template>;
+</template>;
 
 <script lang="ts">
 import axios from 'axios';
@@ -264,10 +19,599 @@ export default class Ping extends Vue {
 
   path = 'http://localhost:5000/ping';
 
-  onSelect(value: string) {
-    console.log(value);
-    this.selected = value;
+  options = [
+    'Africa/Abidjan',
+    'Africa/Accra',
+    'Africa/Addis_Ababa',
+    'Africa/Algiers',
+    'Africa/Asmara',
+    'Africa/Asmera',
+    'Africa/Bamako',
+    'Africa/Bangui',
+    'Africa/Banjul',
+    'Africa/Bissau',
+    'Africa/Blantyre',
+    'Africa/Brazzaville',
+    'Africa/Bujumbura',
+    'Africa/Cairo',
+    'Africa/Casablanca',
+    'Africa/Ceuta',
+    'Africa/Conakry',
+    'Africa/Dakar',
+    'Africa/Dar_es_Salaam',
+    'Africa/Djibouti',
+    'Africa/Douala',
+    'Africa/El_Aaiun',
+    'Africa/Freetown',
+    'Africa/Gaborone',
+    'Africa/Harare',
+    'Africa/Johannesburg',
+    'Africa/Juba',
+    'Africa/Kampala',
+    'Africa/Khartoum',
+    'Africa/Kigali',
+    'Africa/Kinshasa',
+    'Africa/Lagos',
+    'Africa/Libreville',
+    'Africa/Lome',
+    'Africa/Luanda',
+    'Africa/Lubumbashi',
+    'Africa/Lusaka',
+    'Africa/Malabo',
+    'Africa/Maputo',
+    'Africa/Maseru',
+    'Africa/Mbabane',
+    'Africa/Mogadishu',
+    'Africa/Monrovia',
+    'Africa/Nairobi',
+    'Africa/Ndjamena',
+    'Africa/Niamey',
+    'Africa/Nouakchott',
+    'Africa/Ouagadougou',
+    'Africa/Porto-Novo',
+    'Africa/Sao_Tome',
+    'Africa/Timbuktu',
+    'Africa/Tripoli',
+    'Africa/Tunis',
+    'Africa/Windhoek',
+    'America/Adak',
+    'America/Anchorage',
+    'America/Anguilla',
+    'America/Antigua',
+    'America/Araguaina',
+    'America/Argentina/Buenos_Aires',
+    'America/Argentina/Catamarca',
+    'America/Argentina/ComodRivadavia',
+    'America/Argentina/Cordoba',
+    'America/Argentina/Jujuy',
+    'America/Argentina/La_Rioja',
+    'America/Argentina/Mendoza',
+    'America/Argentina/Rio_Gallegos',
+    'America/Argentina/Salta',
+    'America/Argentina/San_Juan',
+    'America/Argentina/San_Luis',
+    'America/Argentina/Tucuman',
+    'America/Argentina/Ushuaia',
+    'America/Aruba',
+    'America/Asuncion',
+    'America/Atikokan',
+    'America/Atka',
+    'America/Bahia',
+    'America/Bahia_Banderas',
+    'America/Barbados',
+    'America/Belem',
+    'America/Belize',
+    'America/Blanc-Sablon',
+    'America/Boa_Vista',
+    'America/Bogota',
+    'America/Boise',
+    'America/Buenos_Aires',
+    'America/Cambridge_Bay',
+    'America/Campo_Grande',
+    'America/Cancun',
+    'America/Caracas',
+    'America/Catamarca',
+    'America/Cayenne',
+    'America/Cayman',
+    'America/Chicago',
+    'America/Chihuahua',
+    'America/Coral_Harbour',
+    'America/Cordoba',
+    'America/Costa_Rica',
+    'America/Creston',
+    'America/Cuiaba',
+    'America/Curacao',
+    'America/Danmarkshavn',
+    'America/Dawson',
+    'America/Dawson_Creek',
+    'America/Denver',
+    'America/Detroit',
+    'America/Dominica',
+    'America/Edmonton',
+    'America/Eirunepe',
+    'America/El_Salvador',
+    'America/Ensenada',
+    'America/Fort_Nelson',
+    'America/Fort_Wayne',
+    'America/Fortaleza',
+    'America/Glace_Bay',
+    'America/Godthab',
+    'America/Goose_Bay',
+    'America/Grand_Turk',
+    'America/Grenada',
+    'America/Guadeloupe',
+    'America/Guatemala',
+    'America/Guayaquil',
+    'America/Guyana',
+    'America/Halifax',
+    'America/Havana',
+    'America/Hermosillo',
+    'America/Indiana/Indianapolis',
+    'America/Indiana/Knox',
+    'America/Indiana/Marengo',
+    'America/Indiana/Petersburg',
+    'America/Indiana/Tell_City',
+    'America/Indiana/Vevay',
+    'America/Indiana/Vincennes',
+    'America/Indiana/Winamac',
+    'America/Indianapolis',
+    'America/Inuvik',
+    'America/Iqaluit',
+    'America/Jamaica',
+    'America/Jujuy',
+    'America/Juneau',
+    'America/Kentucky/Louisville',
+    'America/Kentucky/Monticello',
+    'America/Knox_IN',
+    'America/Kralendijk',
+    'America/La_Paz',
+    'America/Lima',
+    'America/Los_Angeles',
+    'America/Louisville',
+    'America/Lower_Princes',
+    'America/Maceio',
+    'America/Managua',
+    'America/Manaus',
+    'America/Marigot',
+    'America/Martinique',
+    'America/Matamoros',
+    'America/Mazatlan',
+    'America/Mendoza',
+    'America/Menominee',
+    'America/Merida',
+    'America/Metlakatla',
+    'America/Mexico_City',
+    'America/Miquelon',
+    'America/Moncton',
+    'America/Monterrey',
+    'America/Montevideo',
+    'America/Montreal',
+    'America/Montserrat',
+    'America/Nassau',
+    'America/New_York',
+    'America/Nipigon',
+    'America/Nome',
+    'America/Noronha',
+    'America/North_Dakota/Beulah',
+    'America/North_Dakota/Center',
+    'America/North_Dakota/New_Salem',
+    'America/Ojinaga',
+    'America/Panama',
+    'America/Pangnirtung',
+    'America/Paramaribo',
+    'America/Phoenix',
+    'America/Port-au-Prince',
+    'America/Port_of_Spain',
+    'America/Porto_Acre',
+    'America/Porto_Velho',
+    'America/Puerto_Rico',
+    'America/Rainy_River',
+    'America/Rankin_Inlet',
+    'America/Recife',
+    'America/Regina',
+    'America/Resolute',
+    'America/Rio_Branco',
+    'America/Rosario',
+    'America/Santa_Isabel',
+    'America/Santarem',
+    'America/Santiago',
+    'America/Santo_Domingo',
+    'America/Sao_Paulo',
+    'America/Scoresbysund',
+    'America/Shiprock',
+    'America/Sitka',
+    'America/St_Barthelemy',
+    'America/St_Johns',
+    'America/St_Kitts',
+    'America/St_Lucia',
+    'America/St_Thomas',
+    'America/St_Vincent',
+    'America/Swift_Current',
+    'America/Tegucigalpa',
+    'America/Thule',
+    'America/Thunder_Bay',
+    'America/Tijuana',
+    'America/Toronto',
+    'America/Tortola',
+    'America/Vancouver',
+    'America/Virgin',
+    'America/Whitehorse',
+    'America/Winnipeg',
+    'America/Yakutat',
+    'America/Yellowknife',
+    'Antarctica/Casey',
+    'Antarctica/Davis',
+    'Antarctica/DumontDUrville',
+    'Antarctica/Macquarie',
+    'Antarctica/Mawson',
+    'Antarctica/McMurdo',
+    'Antarctica/Palmer',
+    'Antarctica/Rothera',
+    'Antarctica/South_Pole',
+    'Antarctica/Syowa',
+    'Antarctica/Troll',
+    'Antarctica/Vostok',
+    'Arctic/Longyearbyen',
+    'Asia/Aden',
+    'Asia/Almaty',
+    'Asia/Amman',
+    'Asia/Anadyr',
+    'Asia/Aqtau',
+    'Asia/Aqtobe',
+    'Asia/Ashgabat',
+    'Asia/Ashkhabad',
+    'Asia/Baghdad',
+    'Asia/Bahrain',
+    'Asia/Baku',
+    'Asia/Bangkok',
+    'Asia/Barnaul',
+    'Asia/Beirut',
+    'Asia/Bishkek',
+    'Asia/Brunei',
+    'Asia/Calcutta',
+    'Asia/Chita',
+    'Asia/Choibalsan',
+    'Asia/Chongqing',
+    'Asia/Chungking',
+    'Asia/Colombo',
+    'Asia/Dacca',
+    'Asia/Damascus',
+    'Asia/Dhaka',
+    'Asia/Dili',
+    'Asia/Dubai',
+    'Asia/Dushanbe',
+    'Asia/Gaza',
+    'Asia/Harbin',
+    'Asia/Hebron',
+    'Asia/Ho_Chi_Minh',
+    'Asia/Hong_Kong',
+    'Asia/Hovd',
+    'Asia/Irkutsk',
+    'Asia/Istanbul',
+    'Asia/Jakarta',
+    'Asia/Jayapura',
+    'Asia/Jerusalem',
+    'Asia/Kabul',
+    'Asia/Kamchatka',
+    'Asia/Karachi',
+    'Asia/Kashgar',
+    'Asia/Kathmandu',
+    'Asia/Katmandu',
+    'Asia/Khandyga',
+    'Asia/Kolkata',
+    'Asia/Krasnoyarsk',
+    'Asia/Kuala_Lumpur',
+    'Asia/Kuching',
+    'Asia/Kuwait',
+    'Asia/Macao',
+    'Asia/Macau',
+    'Asia/Magadan',
+    'Asia/Makassar',
+    'Asia/Manila',
+    'Asia/Muscat',
+    'Asia/Nicosia',
+    'Asia/Novokuznetsk',
+    'Asia/Novosibirsk',
+    'Asia/Omsk',
+    'Asia/Oral',
+    'Asia/Phnom_Penh',
+    'Asia/Pontianak',
+    'Asia/Pyongyang',
+    'Asia/Qatar',
+    'Asia/Qyzylorda',
+    'Asia/Rangoon',
+    'Asia/Riyadh',
+    'Asia/Saigon',
+    'Asia/Sakhalin',
+    'Asia/Samarkand',
+    'Asia/Seoul',
+    'Asia/Shanghai',
+    'Asia/Singapore',
+    'Asia/Srednekolymsk',
+    'Asia/Taipei',
+    'Asia/Tashkent',
+    'Asia/Tbilisi',
+    'Asia/Tehran',
+    'Asia/Tel_Aviv',
+    'Asia/Thimbu',
+    'Asia/Thimphu',
+    'Asia/Tokyo',
+    'Asia/Tomsk',
+    'Asia/Ujung_Pandang',
+    'Asia/Ulaanbaatar',
+    'Asia/Ulan_Bator',
+    'Asia/Urumqi',
+    'Asia/Ust-Nera',
+    'Asia/Vientiane',
+    'Asia/Vladivostok',
+    'Asia/Yakutsk',
+    'Asia/Yekaterinburg',
+    'Asia/Yerevan',
+    'Atlantic/Azores',
+    'Atlantic/Bermuda',
+    'Atlantic/Canary',
+    'Atlantic/Cape_Verde',
+    'Atlantic/Faeroe',
+    'Atlantic/Faroe',
+    'Atlantic/Jan_Mayen',
+    'Atlantic/Madeira',
+    'Atlantic/Reykjavik',
+    'Atlantic/South_Georgia',
+    'Atlantic/St_Helena',
+    'Atlantic/Stanley',
+    'Australia/ACT',
+    'Australia/Adelaide',
+    'Australia/Brisbane',
+    'Australia/Broken_Hill',
+    'Australia/Canberra',
+    'Australia/Currie',
+    'Australia/Darwin',
+    'Australia/Eucla',
+    'Australia/Hobart',
+    'Australia/LHI',
+    'Australia/Lindeman',
+    'Australia/Lord_Howe',
+    'Australia/Melbourne',
+    'Australia/NSW',
+    'Australia/North',
+    'Australia/Perth',
+    'Australia/Queensland',
+    'Australia/South',
+    'Australia/Sydney',
+    'Australia/Tasmania',
+    'Australia/Victoria',
+    'Australia/West',
+    'Australia/Yancowinna',
+    'Brazil/Acre',
+    'Brazil/DeNoronha',
+    'Brazil/East',
+    'Brazil/West',
+    'CET',
+    'CST6CDT',
+    'Canada/Atlantic',
+    'Canada/Central',
+    'Canada/East-Saskatchewan',
+    'Canada/Eastern',
+    'Canada/Mountain',
+    'Canada/Newfoundland',
+    'Canada/Pacific',
+    'Canada/Saskatchewan',
+    'Canada/Yukon',
+    'Chile/Continental',
+    'Chile/EasterIsland',
+    'Cuba',
+    'EET',
+    'EST',
+    'EST5EDT',
+    'Egypt',
+    'Eire',
+    'Etc/GMT',
+    'Etc/GMT+0',
+    'Etc/GMT+1',
+    'Etc/GMT+10',
+    'Etc/GMT+11',
+    'Etc/GMT+12',
+    'Etc/GMT+2',
+    'Etc/GMT+3',
+    'Etc/GMT+4',
+    'Etc/GMT+5',
+    'Etc/GMT+6',
+    'Etc/GMT+7',
+    'Etc/GMT+8',
+    'Etc/GMT+9',
+    'Etc/GMT-0',
+    'Etc/GMT-1',
+    'Etc/GMT-10',
+    'Etc/GMT-11',
+    'Etc/GMT-12',
+    'Etc/GMT-13',
+    'Etc/GMT-14',
+    'Etc/GMT-2',
+    'Etc/GMT-3',
+    'Etc/GMT-4',
+    'Etc/GMT-5',
+    'Etc/GMT-6',
+    'Etc/GMT-7',
+    'Etc/GMT-8',
+    'Etc/GMT-9',
+    'Etc/GMT0',
+    'Etc/Greenwich',
+    'Etc/UCT',
+    'Etc/UTC',
+    'Etc/Universal',
+    'Etc/Zulu',
+    'Europe/Amsterdam',
+    'Europe/Andorra',
+    'Europe/Astrakhan',
+    'Europe/Athens',
+    'Europe/Belfast',
+    'Europe/Belgrade',
+    'Europe/Berlin',
+    'Europe/Bratislava',
+    'Europe/Brussels',
+    'Europe/Bucharest',
+    'Europe/Budapest',
+    'Europe/Busingen',
+    'Europe/Chisinau',
+    'Europe/Copenhagen',
+    'Europe/Dublin',
+    'Europe/Gibraltar',
+    'Europe/Guernsey',
+    'Europe/Helsinki',
+    'Europe/Isle_of_Man',
+    'Europe/Istanbul',
+    'Europe/Jersey',
+    'Europe/Kaliningrad',
+    'Europe/Kiev',
+    'Europe/Kirov',
+    'Europe/Lisbon',
+    'Europe/Ljubljana',
+    'Europe/London',
+    'Europe/Luxembourg',
+    'Europe/Madrid',
+    'Europe/Malta',
+    'Europe/Mariehamn',
+    'Europe/Minsk',
+    'Europe/Monaco',
+    'Europe/Moscow',
+    'Europe/Nicosia',
+    'Europe/Oslo',
+    'Europe/Paris',
+    'Europe/Podgorica',
+    'Europe/Prague',
+    'Europe/Riga',
+    'Europe/Rome',
+    'Europe/Samara',
+    'Europe/San_Marino',
+    'Europe/Sarajevo',
+    'Europe/Simferopol',
+    'Europe/Skopje',
+    'Europe/Sofia',
+    'Europe/Stockholm',
+    'Europe/Tallinn',
+    'Europe/Tirane',
+    'Europe/Tiraspol',
+    'Europe/Ulyanovsk',
+    'Europe/Uzhgorod',
+    'Europe/Vaduz',
+    'Europe/Vatican',
+    'Europe/Vienna',
+    'Europe/Vilnius',
+    'Europe/Volgograd',
+    'Europe/Warsaw',
+    'Europe/Zagreb',
+    'Europe/Zaporozhye',
+    'Europe/Zurich',
+    'GB',
+    'GB-Eire',
+    'GMT',
+    'GMT+0',
+    'GMT-0',
+    'GMT0',
+    'Greenwich',
+    'HST',
+    'Hongkong',
+    'Iceland',
+    'Indian/Antananarivo',
+    'Indian/Chagos',
+    'Indian/Christmas',
+    'Indian/Cocos',
+    'Indian/Comoro',
+    'Indian/Kerguelen',
+    'Indian/Mahe',
+    'Indian/Maldives',
+    'Indian/Mauritius',
+    'Indian/Mayotte',
+    'Indian/Reunion',
+    'Iran',
+    'Israel',
+    'Jamaica',
+    'Japan',
+    'Kwajalein',
+    'Libya',
+    'MET',
+    'MST',
+    'MST7MDT',
+    'Mexico/BajaNorte',
+    'Mexico/BajaSur',
+    'Mexico/General',
+    'NZ',
+    'NZ-CHAT',
+    'Navajo',
+    'PRC',
+    'PST8PDT',
+    'Pacific/Apia',
+    'Pacific/Auckland',
+    'Pacific/Bougainville',
+    'Pacific/Chatham',
+    'Pacific/Chuuk',
+    'Pacific/Easter',
+    'Pacific/Efate',
+    'Pacific/Enderbury',
+    'Pacific/Fakaofo',
+    'Pacific/Fiji',
+    'Pacific/Funafuti',
+    'Pacific/Galapagos',
+    'Pacific/Gambier',
+    'Pacific/Guadalcanal',
+    'Pacific/Guam',
+    'Pacific/Honolulu',
+    'Pacific/Johnston',
+    'Pacific/Kiritimati',
+    'Pacific/Kosrae',
+    'Pacific/Kwajalein',
+    'Pacific/Majuro',
+    'Pacific/Marquesas',
+    'Pacific/Midway',
+    'Pacific/Nauru',
+    'Pacific/Niue',
+    'Pacific/Norfolk',
+    'Pacific/Noumea',
+    'Pacific/Pago_Pago',
+    'Pacific/Palau',
+    'Pacific/Pitcairn',
+    'Pacific/Pohnpei',
+    'Pacific/Ponape',
+    'Pacific/Port_Moresby',
+    'Pacific/Rarotonga',
+    'Pacific/Saipan',
+    'Pacific/Samoa',
+    'Pacific/Tahiti',
+    'Pacific/Tarawa',
+    'Pacific/Tongatapu',
+    'Pacific/Truk',
+    'Pacific/Wake',
+    'Pacific/Wallis',
+    'Pacific/Yap',
+    'Poland',
+    'Portugal',
+    'ROC',
+    'ROK',
+    'Singapore',
+    'Turkey',
+    'UCT',
+    'US/Alaska',
+    'US/Aleutian',
+    'US/Arizona',
+    'US/Central',
+    'US/East-Indiana',
+    'US/Eastern',
+    'US/Hawaii',
+    'US/Indiana-Starke',
+    'US/Michigan',
+    'US/Mountain',
+    'US/Pacific',
+    'US/Pacific-New',
+    'US/Samoa',
+    'UTC',
+    'Universal',
+    'W-SU',
+    'WET',
+    'Zulu',
+  ];
 
+  onSelect(value: string) {
+    this.selected = value;
     this.getTime();
   }
 
@@ -277,7 +621,7 @@ export default class Ping extends Vue {
         params: { selectedZone: this.selected },
       })
       .then((res) => {
-        this.msg = res.data;
+        this.msg = `Time in selected timezone - ${res.data.timezone} hrs`;
       })
       .catch((error) => {
         // eslint-disable-next-line

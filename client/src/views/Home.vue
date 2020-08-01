@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
     <Ping msg="Hello world ping!!"/>
   </div>
 </template>
