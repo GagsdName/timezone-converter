@@ -17,18 +17,17 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 
 
 # sanity check route
-@app.route('/ping', methods=['GET'])
-def ping_pong():    
+@app.route('/local-time-in-timezone', methods=['GET'])
+def get_local_time():    
     utcmoment_naive = datetime.utcnow()
     utcmoment = utcmoment_naive.replace(tzinfo=pytz.utc)
-    localFormat = "%H:%M:%S"
+    local_format = '%H:%M:%S'
 
-    selected = request.args.get('selectedZone')
-    localDatetime = utcmoment.astimezone(pytz.timezone(selected))
+    selected = request.args.get('selectedTimezone')
+    local_datetime = utcmoment.astimezone(pytz.timezone(selected))
 
     return jsonify({
-        'timezone': localDatetime.strftime(localFormat)
-        # 'timezone': request.args.get('selectedZone')
+        'timezone': local_datetime.strftime(local_format)
     })
 
 
