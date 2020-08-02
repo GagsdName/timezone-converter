@@ -11,7 +11,7 @@
 <script lang="ts">
 import axios from 'axios';
 import { Component, Vue } from 'vue-property-decorator';
-import timezones from './timezones';
+import timezones from './list-of-timezones';
 
 @Component
 export default class Timezone extends Vue {
