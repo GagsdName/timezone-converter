@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-// import Timezone from '@/components/Timezone.vue';
 import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
@@ -13,12 +12,12 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/select-timezone',
-    name: 'Timezone',
+    name: 'Timezone View',
     // component: Timezone,
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/Timezone.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '../views/TimezoneView.vue'),
   },
 ];
 
