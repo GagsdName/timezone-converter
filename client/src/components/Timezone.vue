@@ -39,6 +39,7 @@ export default class Timezone extends Vue {
         this.localTime = `Local time in selected timezone - ${res.data.timezone} hrs`;
       })
       .catch((error) => {
+        this.localTime = 'Server returned an error! Please try again and make sure the server is running!';
         // eslint-disable-next-line
         console.error(error);
       });
