@@ -1,12 +1,40 @@
 <template>
-  <div>
-    <h4>{{ this.header }}</h4>
-    <select @change="onSelect($event.target.value)">
-      <option v-for="value in options" v-bind:key="value">{{ value }}</option>
-    </select>
-      <p><b>{{ this.localTime }}</b></p>
+  <div class="timezone-container">
+    <div class="item">
+      <form id="selector-form" @submit.prevent="submitForm">
+        <label><strong>{{ this.header }}</strong></label>
+        <select @change="onSelect($event.target.value)">
+          <option v-for="value in options" v-bind:key="value">{{ value }}</option>
+        </select>
+        <br>
+        <button id="submit-button">Submit</button>
+      </form>
+    </div>
+    <p id="outcome"><strong>{{ this.localTime }}</strong></p>
   </div>
-</template>;
+</template>
+
+<style>
+  .timezone-container {
+    margin-top:3%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+
+  #submit-button {
+    border: none;
+    color: white;
+    padding: 2px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 2px;
+    cursor: pointer;
+    background-color: #4CAF50;
+  }
+</style>
 
 <script lang="ts">
 import axios from 'axios';
@@ -15,7 +43,7 @@ import timezones from './list-of-timezones';
 
 @Component
 export default class Timezone extends Vue {
-  header = 'Select a timezone';
+  header = 'Select a timezone ';
 
   localTime = '';
 
@@ -25,15 +53,19 @@ export default class Timezone extends Vue {
 
   options = timezones;
 
-  onSelect(value: string) {
+  onSelect(value: string): void {
     this.selectedTimezone = value;
-    this.getTime();
+    this.localTime = ''; // reset outcome
   }
 
-  getTime() {
+  submitForm(): void {
+    this.getTime(this.selectedTimezone);
+  }
+
+  getTime(timezone: string): void {
     axios
       .get(this.path, {
-        params: { selectedTimezone: this.selectedTimezone },
+        params: { selectedTimezone: timezone },
       })
       .then((res) => {
         this.localTime = `Local time in selected timezone - ${res.data.timezone} hrs`;
